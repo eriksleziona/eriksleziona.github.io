@@ -49,6 +49,29 @@ layout: default
   </article>
 </section>
 
+<section class="content-section">
+  <div class="section-heading">
+    <p class="eyebrow">About The Builder</p>
+    <h2>Technical growth, documented in public</h2>
+    <p>{{ site.profile_headline }}</p>
+  </div>
+
+  <div class="feature-strip profile-strip">
+    <article class="feature-card">
+      <span class="feature-label">Snapshot</span>
+      <p>{{ site.profile_short }}</p>
+    </article>
+    <article class="feature-card">
+      <span class="feature-label">Current focus</span>
+      <ul class="feature-list">
+        {% for item in site.profile_focus limit:3 %}
+          <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </article>
+  </div>
+</section>
+
 {% assign trimmed_content = content | strip %}
 {% if trimmed_content != "" %}
   <section class="content-section">

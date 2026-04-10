@@ -40,6 +40,22 @@ plugins:
 # You can add custom variables here to use in your pages
 lab_status: "Active"
 main_hypervisor: "Proxmox VE / VirtualBox / HomeAssistant / NAS Server / Raspberry Pi for Ebus Monitoring and other projects"
+profile_headline: "Aspiring system administrator focused on Linux, Python, and practical systems administration."
+profile_short: "I am building this site as a working portfolio for my path toward system administration, documenting the lab work, troubleshooting, and day-to-day habits that help me grow."
+profile_story: >-
+  I learn best by building real environments and solving real problems. Through
+  this home lab, I am developing hands-on experience in Linux administration,
+  Python-based automation, and the kind of structured troubleshooting that good
+  system administration depends on.
+profile_focus:
+  - "Linux administration and shell-based workflows"
+  - "Python for automation and practical admin tasks"
+  - "Systems administration in hands-on lab environments"
+  - "Troubleshooting, documentation, and repeatable operational habits"
+profile_goals:
+  - "Keep growing toward a system administrator role with stronger real-world Linux and infrastructure experience."
+  - "Use Python to automate repetitive tasks and make environments easier to maintain."
+  - "Build a portfolio that shows practical system administration work, not just theory."
 
 # Exclude from processing.
 # The following items will not be processed, by default.

@@ -302,6 +302,20 @@ img {
   margin: 0.7rem 0 0;
 }
 
+.feature-list {
+  margin: 0.75rem 0 0;
+  padding-left: 1.15rem;
+  color: var(--muted);
+}
+
+.feature-list li + li {
+  margin-top: 0.55rem;
+}
+
+.profile-strip .feature-card {
+  min-height: 100%;
+}
+
 .content-section {
   display: grid;
   gap: 1rem;

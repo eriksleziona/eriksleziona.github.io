@@ -5,7 +5,19 @@ permalink: /about/
 intro: A living portfolio for the systems, notes, and operating habits I am building through hands-on lab work.
 ---
 
-This site is where I document how I learn system administration by doing the work, breaking things carefully, and writing down what the repair taught me.
+## About me
+
+{{ site.profile_headline }}
+
+{{ site.profile_short }}
+
+{{ site.profile_story }}
+
+## What I am focused on right now
+
+{% for item in site.profile_focus %}
+- {{ item }}
+{% endfor %}
 
 ## What I use this lab for
 
@@ -17,13 +29,19 @@ This site is where I document how I learn system administration by doing the wor
 
 - Hypervisors and platforms: `{{ site.main_hypervisor }}`
 - Current status: `{{ site.lab_status }}`
-- Main focus: Windows troubleshooting, Linux fundamentals, networking, automation, and safer admin workflows.
+- Main focus: Linux, Python, and practical systems administration in hands-on lab environments.
 
 ## What you will find here
 
 - Build logs and architecture decisions from the lab.
 - Troubleshooting write-ups with practical recovery steps.
 - Notes on security, scripting, and infrastructure experiments that I can reuse later.
+
+## What I want this portfolio to show
+
+{% for item in site.profile_goals %}
+- {{ item }}
+{% endfor %}
 
 ## Outside the lab
 
