@@ -32,7 +32,7 @@ layout: default
       </article>
       <article class="stat-card">
         <span>Published notes</span>
-        <strong>{{ site.posts | size }}</strong>
+        <strong data-post-count>{{ site.posts | size }}</strong>
       </article>
     </div>
   </aside>
@@ -104,3 +104,13 @@ layout: default
     {% endfor %}
   </div>
 </section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var counter = document.querySelector("[data-post-count]");
+    if (!counter) return;
+
+    var visiblePosts = document.querySelectorAll(".post-grid .post-card").length;
+    counter.textContent = visiblePosts;
+  });
+</script>
