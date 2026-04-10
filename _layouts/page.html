@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<section class="page-hero">
+  {% if page.title %}
+    <p class="eyebrow">Page</p>
+    <h1>{{ page.title }}</h1>
+  {% endif %}
+  {% if page.intro %}
+    <p class="page-intro">{{ page.intro }}</p>
+  {% endif %}
+</section>
+
+<section class="content-section">
+  <div class="article-card prose">
+    {{ content }}
+  </div>
+</section>

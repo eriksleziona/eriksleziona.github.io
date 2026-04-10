@@ -1,0 +1,83 @@
+---
+layout: default
+---
+{% assign latest_post = site.posts.first %}
+
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">{{ page.hero_kicker | default: 'Home Lab Portfolio' }}</p>
+    <h1>{{ page.hero_title | default: site.title }}</h1>
+    <p class="hero-summary">{{ page.hero_intro | default: site.description }}</p>
+
+    <div class="hero-actions">
+      <a class="button button-primary" href="{{ '/about/' | relative_url }}">Meet the builder</a>
+      {% if site.github_username %}
+        <a class="button button-secondary" href="https://github.com/{{ site.github_username }}" target="_blank" rel="noreferrer">Browse GitHub</a>
+      {% endif %}
+    </div>
+  </div>
+
+  <aside class="hero-panel">
+    {% if latest_post %}
+      <p class="panel-label">Latest entry</p>
+      <h2><a href="{{ latest_post.url | relative_url }}">{{ latest_post.title }}</a></h2>
+      <p>{{ latest_post.summary | default: latest_post.excerpt | strip_html | normalize_whitespace | truncate: 165 }}</p>
+      <a class="text-link" href="{{ latest_post.url | relative_url }}">Read the latest note</a>
+    {% endif %}
+
+    <div class="stat-grid">
+      <article class="stat-card">
+        <span>Lab status</span>
+        <strong>{{ site.lab_status }}</strong>
+      </article>
+      <article class="stat-card">
+        <span>Published notes</span>
+        <strong>{{ site.posts | size }}</strong>
+      </article>
+    </div>
+  </aside>
+</section>
+
+<section class="feature-strip">
+  <article class="feature-card">
+    <span class="feature-label">Current stack</span>
+    <p>{{ site.main_hypervisor }}</p>
+  </article>
+  <article class="feature-card">
+    <span class="feature-label">What this site captures</span>
+    <p>Troubleshooting wins, architecture choices, and the habits behind stable systems administration.</p>
+  </article>
+</section>
+
+{% assign trimmed_content = content | strip %}
+{% if trimmed_content != "" %}
+  <section class="content-section">
+    <div class="article-card prose">
+      {{ content }}
+    </div>
+  </section>
+{% endif %}
+
+<section class="content-section">
+  <div class="section-heading">
+    <p class="eyebrow">Recent notes</p>
+    <h2>Fresh from the lab</h2>
+    <p>Short write-ups focused on practical fixes, architectural thinking, and repeatable admin work.</p>
+  </div>
+
+  <div class="post-grid">
+    {% for post in site.posts %}
+      <article class="post-card">
+        <div class="post-meta">
+          <span>{{ post.date | date: "%b %-d, %Y" }}</span>
+          {% if post.categories and post.categories.size > 0 %}
+            <span>{{ post.categories | first }}</span>
+          {% endif %}
+        </div>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <p>{{ post.summary | default: post.excerpt | strip_html | normalize_whitespace | truncate: 175 }}</p>
+        <a class="text-link" href="{{ post.url | relative_url }}">Open article</a>
+      </article>
+    {% endfor %}
+  </div>
+</section>

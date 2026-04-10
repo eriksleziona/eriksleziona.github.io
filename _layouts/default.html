@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {%- seo -%}
+    {%- feed_meta -%}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+  </head>
+  <body class="site-body">
+    <div class="site-bg" aria-hidden="true"></div>
+    <div class="site-frame">
+      <header class="site-header">
+        <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title | escape }}">
+          <span class="brand-mark">ES</span>
+          <span class="brand-copy">
+            <strong>{{ site.title }}</strong>
+            <span>{{ site.description }}</span>
+          </span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary">
+          <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="is-active"{% endif %}>Home</a>
+          <a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} class="is-active"{% endif %}>About</a>
+          {% if site.github_username %}
+            <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noreferrer">GitHub</a>
+          {% endif %}
+          {% if site.linkedin_username %}
+            <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noreferrer">LinkedIn</a>
+          {% endif %}
+        </nav>
+      </header>
+
+      <main class="site-main">
+        {{ content }}
+      </main>
+
+      <footer class="site-footer">
+        <div>
+          <p class="footer-title">Built for the long game.</p>
+          <p class="footer-copy">{{ site.description }}</p>
+        </div>
+
+        <div class="footer-meta">
+          <span>{{ site.lab_status }}</span>
+          {% if site.email %}
+            <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+          {% endif %}
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

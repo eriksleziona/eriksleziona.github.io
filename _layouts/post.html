@@ -1,0 +1,35 @@
+---
+layout: default
+---
+<article class="post-shell">
+  <header class="page-hero">
+    {% if page.categories and page.categories.size > 0 %}
+      <p class="eyebrow">{{ page.categories | join: " / " }}</p>
+    {% else %}
+      <p class="eyebrow">Lab note</p>
+    {% endif %}
+
+    <h1>{{ page.title }}</h1>
+
+    <p class="page-intro">
+      {{ page.date | date: "%B %-d, %Y" }}
+      {% if page.author %} &middot; {{ page.author }}{% endif %}
+    </p>
+
+    {% if page.tags and page.tags.size > 0 %}
+      <div class="tag-row">
+        {% for tag in page.tags %}
+          <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </header>
+
+  <div class="article-card prose">
+    {{ content }}
+  </div>
+
+  <p class="back-link">
+    <a class="text-link" href="{{ '/' | relative_url }}">Back to all notes</a>
+  </p>
+</article>
