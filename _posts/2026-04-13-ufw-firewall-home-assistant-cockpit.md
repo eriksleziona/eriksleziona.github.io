@@ -57,7 +57,7 @@ sudo ufw enable
 
 And that was the exact moment my brain produced the very calm and professional internal message:
 
-> I may have just broken this.
+> It Was At This Moment He Knew He Fu\*\*ked Up.
 
 ## The Problem
 
