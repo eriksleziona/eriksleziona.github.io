@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Fail2Ban: Hiring an Automatic Bouncer for My Home Assistant Server"
-date: 2026-04-13 19:15:00 +0200
+date: 2026-04-13 09:15:00 +0200
 categories: [Security, Linux]
 tags: [Fail2Ban, Debian, Home Assistant, UFW, SSH]
 summary: "How I set up Fail2Ban on my Debian Home Assistant server, why I chose it over manual iptables blocking, and how I verified that the sshd jail was ready to start throwing out brute-force guests."
