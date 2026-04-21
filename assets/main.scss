@@ -69,9 +69,9 @@ img {
 }
 
 .site-header {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
-  justify-content: space-between;
   gap: 1.25rem;
   padding: 1rem 1.25rem;
   margin: 1rem 0 2rem;
@@ -104,6 +104,7 @@ img {
 .brand-copy {
   display: grid;
   gap: 0.15rem;
+  min-width: 0;
 }
 
 .brand-copy strong,
@@ -127,17 +128,36 @@ img {
 }
 
 .site-nav {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
-  flex-wrap: wrap;
+  gap: 0.4rem;
+  flex-wrap: nowrap;
   justify-content: flex-end;
+  padding: 0.3rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(169, 183, 199, 0.28) transparent;
+}
+
+.site-nav::-webkit-scrollbar {
+  height: 6px;
+}
+
+.site-nav::-webkit-scrollbar-thumb {
+  background: rgba(169, 183, 199, 0.28);
+  border-radius: 999px;
 }
 
 .site-nav a {
+  flex: 0 0 auto;
   padding: 0.7rem 1rem;
   border-radius: 999px;
   color: var(--muted);
+  white-space: nowrap;
   transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
 }
 
@@ -384,7 +404,7 @@ img {
 }
 
 .page-hero {
-  padding: 0.5rem 0 0;
+  padding: 0.5rem 0 1.15rem;
 }
 
 .page-hero h1 {
@@ -499,6 +519,7 @@ img {
   display: flex;
   gap: 0.55rem;
   flex-wrap: wrap;
+  margin: 0.2rem 0 0;
 }
 
 .tag {
@@ -581,6 +602,10 @@ img {
     justify-content: flex-start;
   }
 
+  .site-nav {
+    width: 100%;
+  }
+
   .hero {
     grid-template-columns: 1fr;
   }
@@ -623,7 +648,23 @@ img {
 
   .site-nav a,
   .button {
+    justify-content: center;
+  }
+
+  .site-nav {
     width: 100%;
+    margin-inline: -0.15rem;
+    padding: 0.25rem 0.15rem 0.4rem;
+    justify-content: flex-start;
+    scroll-padding-inline: 0.15rem;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .site-nav a {
+    width: auto;
     justify-content: center;
   }
 }
