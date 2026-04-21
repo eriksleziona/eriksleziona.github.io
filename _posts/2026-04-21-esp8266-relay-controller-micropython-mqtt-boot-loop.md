@@ -34,8 +34,8 @@ The relay board itself was powered from the controller's `5V` pin, and the contr
 This gave me enough flexibility to use a relay either as a normal switch or as a short pulse trigger, depending on what I want to control later.
 
 <figure>
-  <img src="{{ '/assets/images/esp8266-relay-wiring-overview.png' | relative_url }}" alt="ESP8266 controller mounted inside an enclosure and wired to a 4-channel relay board." />
-  <figcaption>The controller on the left, the relay module on the right, and just enough wires to make the whole thing look official.</figcaption>
+  <img src="{{ '/assets/images/esp8266-esptool-wiring.png' | relative_url }}" alt="ESP8266 controller mounted inside an enclosure and wired to a 4-channel relay board." />
+  <figcaption>The real wiring photo: ESP8266 on the left, relay board on the right, and a surprisingly decent amount of order for an electronics box.</figcaption>
 </figure>
 
 ## Why MicroPython and MQTT Instead of ESPHome?
@@ -103,8 +103,8 @@ With the firmware fixed and the script in place, the relay controller appeared c
 That is always the moment when a project stops feeling like a box full of wires and starts feeling like an actual system.
 
 <figure>
-  <img src="{{ '/assets/images/esp8266-relay-homeassistant-dashboard.png' | relative_url }}" alt="Home Assistant dashboard showing an MQTT relay controller with four switch controls." />
-  <figcaption>Four relays, one dashboard, and absolutely no reason to get up from the chair anymore.</figcaption>
+  <img src="{{ '/assets/images/mqtt_data.png' | relative_url }}" alt="Home Assistant dashboard showing MQTT relay controls and device data for the ESP8266 relay controller." />
+  <figcaption>The actual Home Assistant view from the repo: relay controls, MQTT data, and the small but satisfying feeling that the whole thing is finally alive.</figcaption>
 </figure>
 
 ## Outcome
