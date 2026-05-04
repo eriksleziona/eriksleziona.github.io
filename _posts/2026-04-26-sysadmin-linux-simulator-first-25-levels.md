@@ -132,5 +132,5 @@ they are building the hands before the heavier work begins.
 If **OverTheWire Bandit** feels like command-line boot camp, `Sysadmin: Linux Simulator` feels more like terminal gym class.
 
 Less punishment.
-More onboarding.
-Still enough Linux to remind you that the shell will absolutely notice when you are guessing.
+Morg.
+Ste onboardinill enough Linux to remind you that the shell will absolutely notice when you are guessing.
