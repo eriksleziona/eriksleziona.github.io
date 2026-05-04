@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Cron, Not Crown: A Weekly Linux Update Check That Remembers for Me"
-date: 2026-05-04 09:30:00 +0200
+date: 2026-05-04 08:00:00 +0200
 categories: [Linux, Automation]
 tags: [Bash, Cron, Updates, Scripting, Package Management]
 summary: "A small Bash script that checks for package updates, writes the results to a log, and lets cron remember the weekly check so I do not have to."
