@@ -1,21 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    {%- seo -%}
-    {%- feed_meta -%}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-M63NRDFG");
+    </script>
+    <!-- End Google Tag Manager -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {%- seo -%} {%- feed_meta -%}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}" />
   </head>
   <body class="site-body">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-M63NRDFG"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div class="site-bg" aria-hidden="true"></div>
     <div class="site-frame">
       <header class="site-header">
-        <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title | escape }}">
+        <a
+          class="brand"
+          href="{{ '/' | relative_url }}"
+          aria-label="{{ site.title | escape }}"
+        >
           <span class="brand-mark">ES</span>
           <span class="brand-copy">
             <strong>{{ site.title }}</strong>
@@ -24,20 +54,51 @@
         </a>
 
         <nav class="site-nav" aria-label="Primary">
-          <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="is-active"{% endif %}>Home</a>
-          <a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} class="is-active"{% endif %}>About</a>
+          <a
+            href="{{ '/' | relative_url }}"
+            {%
+            if
+            page.url=""
+            ="/"
+            %}
+            class="is-active"
+            {%
+            endif
+            %}
+            >Home</a
+          >
+          <a
+            href="{{ '/about/' | relative_url }}"
+            {%
+            if
+            page.url=""
+            ="/about/"
+            %}
+            class="is-active"
+            {%
+            endif
+            %}
+            >About</a
+          >
           {% if site.github_username %}
-            <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noreferrer">GitHub</a>
-          {% endif %}
-          {% if site.linkedin_username %}
-            <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a
+            href="https://github.com/{{ site.github_username }}"
+            target="_blank"
+            rel="noreferrer"
+            >GitHub</a
+          >
+          {% endif %} {% if site.linkedin_username %}
+          <a
+            href="https://www.linkedin.com/in/{{ site.linkedin_username }}"
+            target="_blank"
+            rel="noreferrer"
+            >LinkedIn</a
+          >
           {% endif %}
         </nav>
       </header>
 
-      <main class="site-main">
-        {{ content }}
-      </main>
+      <main class="site-main">{{ content }}</main>
 
       <footer class="site-footer">
         <div>
@@ -48,7 +109,7 @@
         <div class="footer-meta">
           <span>{{ site.lab_status }}</span>
           {% if site.email %}
-            <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+          <a href="mailto:{{ site.email }}">{{ site.email }}</a>
           {% endif %}
         </div>
       </footer>
