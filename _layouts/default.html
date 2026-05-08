@@ -11,7 +11,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    {%- seo -%} {%- feed_meta -%}
+    {%- seo -%}
+    {%- feed_meta -%}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -28,11 +29,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="site-bg" aria-hidden="true"></div>
     <div class="site-frame">
       <header class="site-header">
-        <a
-          class="brand"
-          href="{{ '/' | relative_url }}"
-          aria-label="{{ site.title | escape }}"
-        >
+        <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title | escape }}">
           <span class="brand-mark">ES</span>
           <span class="brand-copy">
             <strong>{{ site.title }}</strong>
@@ -41,51 +38,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </a>
 
         <nav class="site-nav" aria-label="Primary">
-          <a
-            href="{{ '/' | relative_url }}"
-            {%
-            if
-            page.url=""
-            ="/"
-            %}
-            class="is-active"
-            {%
-            endif
-            %}
-            >Home</a
-          >
-          <a
-            href="{{ '/about/' | relative_url }}"
-            {%
-            if
-            page.url=""
-            ="/about/"
-            %}
-            class="is-active"
-            {%
-            endif
-            %}
-            >About</a
-          >
-          {% if site.github_username %}
-          <a
-            href="https://github.com/{{ site.github_username }}"
-            target="_blank"
-            rel="noreferrer"
-            >GitHub</a
-          >
-          {% endif %} {% if site.linkedin_username %}
-          <a
-            href="https://www.linkedin.com/in/{{ site.linkedin_username }}"
-            target="_blank"
-            rel="noreferrer"
-            >LinkedIn</a
-          >
-          {% endif %}
+          <a href="{{ '/' | relative_url }}">Home</a>
+          <a href="{{ '/about/' | relative_url }}">About</a>
+          <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noreferrer">LinkedIn</a>
         </nav>
       </header>
 
-      <main class="site-main">{{ content }}</main>
+      <main class="site-main">
+        {{ content }}
+      </main>
 
       <footer class="site-footer">
         <div>
@@ -95,9 +57,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div class="footer-meta">
           <span>{{ site.lab_status }}</span>
-          {% if site.email %}
           <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-          {% endif %}
         </div>
       </footer>
     </div>
